@@ -26,15 +26,11 @@ public class TaskLoader {
 
     private static Map<String, TaskData> tasksMap;
 
-    static {
-        loadTasks();
-    }
-
-    private static void loadTasks() {
+    public static void load(String path) {
         Gson gson = new Gson();
         try (InputStreamReader reader = new InputStreamReader(
-                Objects.requireNonNull(getResourceAsStream(),
-                        "Resource /task.json not found"))) {
+                Objects.requireNonNull(getResourceAsStream(path),
+                        "Resource " + path + " не найден"))) {
             Type type = new TypeToken<Map<String, TaskData>>(){}.getType();
             tasksMap = gson.fromJson(reader, type);
             if (tasksMap == null) {
@@ -43,14 +39,14 @@ public class TaskLoader {
                 logger.info("Задачи успешно загружены: {}", tasksMap.keySet());
             }
         } catch (NullPointerException e) {
-            logger.error("Не удалось найти ресурс /task.json", e);
+            logger.error("Не удалось найти ресурс {}", path, e);
         } catch (Exception e) {
             logger.error("Ошибка при чтении JSON файла", e);
         }
     }
 
-    private static InputStream getResourceAsStream() {
-        return TaskLoader.class.getResourceAsStream("/task.json");
+    private static InputStream getResourceAsStream(String path) {
+        return TaskLoader.class.getResourceAsStream(path);
     }
 
     public static TaskData getTask(String key) {

@@ -1,0 +1,7 @@
+{
+  "evenNumberPrinterTest": {
+    "number": 1,
+    "header": "evenNumberPrinterTest",
+    "description": "Тестовая программа, которая выведет в консоль все чётные числа, заданного массива целых чисел\\n\""
+  }
+}

@@ -32,7 +32,7 @@ public class NumberProcessor extends Task {
     }
 
     @Override
-    protected void read() {
+    public void read() {
         System.out.print("Введите два целых числа (a и b), разделенные пробелом: ");
         String input;
         try {
@@ -64,7 +64,7 @@ public class NumberProcessor extends Task {
     }
 
     @Override
-    protected void compare() {
+    public void compare() {
         String result;
         if (a > b) {
             result = String.format("%d > %d", a, b);

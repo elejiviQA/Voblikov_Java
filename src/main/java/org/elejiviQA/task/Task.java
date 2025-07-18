@@ -13,7 +13,7 @@ public abstract class Task {
 
     private static final Logger logger = LoggerFactory.getLogger(Task.class);
 
-    protected static final BufferedReader reader;
+    public static final BufferedReader reader;
 
     static {
         reader = new BufferedReader(new InputStreamReader(System.in));
@@ -48,11 +48,11 @@ public abstract class Task {
 
     public abstract void execute();
 
-    protected abstract void read();
+    public abstract void read();
 
-    protected abstract void compare();
+    public abstract void compare();
 
-    protected void isReadStreamRequired() {
+    public void isReadStreamRequired() {
         if (this.taskId == totalTasksLoaded) {
             try {
                 reader.close();

@@ -31,7 +31,7 @@ public class StringComparer extends Task {
     }
 
     @Override
-    protected void read() {
+    public void read() {
         try {
             System.out.print("Введите первую строку: ");
             a = reader.readLine();
@@ -45,7 +45,7 @@ public class StringComparer extends Task {
     }
 
     @Override
-    protected void compare() {
+    public void compare() {
         if (Objects.equals(a, b)) {
             logger.info("Строки идентичны");
             System.out.println("Строки идентичны");

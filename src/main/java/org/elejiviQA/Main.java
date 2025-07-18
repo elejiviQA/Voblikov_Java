@@ -1,9 +1,6 @@
 package org.elejiviQA;
 
-import org.elejiviQA.task.EvenNumbersPrinter;
-import org.elejiviQA.task.NumberProcessor;
-import org.elejiviQA.task.StringComparer;
-import org.elejiviQA.task.Task;
+import org.elejiviQA.task.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,10 +13,12 @@ public class Main {
         System.out.println("Запуск программы...");
         System.out.println("********************\n");
 
+        TaskLoader.load("/tasks.json");
+
         Task[] tasks = {
                 new NumberProcessor("task1"),
                 new StringComparer("task2"),
-                new EvenNumbersPrinter("task3")
+                new EvenNumberPrinter("task3")
         };
 
         for (Task task : tasks) {
