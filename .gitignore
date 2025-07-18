@@ -1,0 +1,10 @@
+/*
+
+!.gitignore
+!build.gradle
+!settings.gradle
+!build.gradle.kts
+!settings.gradle.kts
+!gradle.properties
+!gradle/wrapper/gradle-wrapper.jar
+!src/
